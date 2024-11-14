@@ -12,4 +12,4 @@ data_clean <- data %>%
          COVID.19.Deaths = as.numeric(COVID.19.Deaths)) %>% #make column numeric 
   select(State, Place.of.Death, COVID.19.Deaths, Date)
 
-write.csv(data_clean, "Data/cleaned_data.csv", row.names = FALSE)
+write.csv(data_clean, "Derived_data/cleaned_data.csv", row.names = FALSE)
