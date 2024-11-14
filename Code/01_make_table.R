@@ -2,7 +2,13 @@ here::i_am(
   "Code/01_make_table.R"
 )
 
+install.packages("webshot2")
+library(webshot2)
 library(gt)
+
+data_clean <- read.csv(
+  file = here::here("Derived_data/cleaned_data.csv")
+)
 
 total_death_data <- data_clean %>%
   filter(Place.of.Death == "Total - All Places of Death") #only show the total number of death
@@ -24,8 +30,6 @@ monthly_deaths_table <- monthly_deaths %>%
     Place.of.Death = "Place of Death"
   )
 
-saveRDS(
-  monthly_deaths_table,
-  file = here::here("Output/monthly_deaths_table.rds")
-)
+gtsave(monthly_deaths_table, "Output/monthly_deaths_table.png")
+
 
