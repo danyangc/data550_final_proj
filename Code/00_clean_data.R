@@ -5,6 +5,10 @@ here::i_am(
 library(dplyr)
 library(lubridate)
 
+data <- read.csv(
+  file = here::here("Data/Provisional_COVID-19_Deaths_by_Place_of_Death_and_State.csv")
+)
+
 data_clean <- data %>%
   filter(!is.na(Year), !is.na(Month), #remove rows with missing month and year
          State != "United States") %>%  #remove the overall counts for the US

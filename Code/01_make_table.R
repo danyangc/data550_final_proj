@@ -2,7 +2,6 @@ here::i_am(
   "Code/01_make_table.R"
 )
 
-install.packages("webshot2")
 library(webshot2)
 library(gt)
 
