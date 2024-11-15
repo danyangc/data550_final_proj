@@ -1,0 +1,22 @@
+---
+title: COVID-19 Mortality Analysis by State
+author: Danyang Chen
+output: html_document
+---
+
+```{r, here-i-am, include = FALSE}
+here::i_am(
+  "report.rmd"
+)
+```
+
+# Top 5 states with highest monthly COVID-19 death tolls
+```{r, echo=FALSE, fig.cap="Monthly COVID-19 Death Toll Table"}
+knitr::include_graphics("Output/monthly_deaths_table.png")
+```
+This table shows the top 5 states with highest monthly COVID-19 death tolls.
+
+# The Monthly Trend in COVID-19 Death Tolls for the Top 5 States
+```{r, echo=FALSE, fig.cap="Monthly Trend in COVID-19 Death"}
+knitr::include_graphics("Output/total_death_line.png")
+```
