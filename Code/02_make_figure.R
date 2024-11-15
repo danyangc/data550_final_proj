@@ -18,7 +18,9 @@ total_death_line <- ggplot(total_death_data_viz, aes(x = Date, y = COVID.19.Deat
   ) +
   theme_minimal()
 
-saveRDS(
-  total_death_line,
-  file = here::here("Output/total_death_line.rds")
+ggsave(
+  here::here("output/total_death_line.png"),
+  plot = total_death_line,
+  device = "png"
 )
+
