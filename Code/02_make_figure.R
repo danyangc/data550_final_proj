@@ -3,6 +3,11 @@ here::i_am(
 )
 
 library(ggplot2)
+library(dplyr)
+
+total_death_data <- read.csv(
+  file = here::here("Derived_data/total_death_data.csv")
+)
 
 total_death_data_viz <- total_death_data %>%
   filter(State %in% c("North Carolina", "New York", "Georgia", "Wisconsin", "Florida"), # select top 5 states

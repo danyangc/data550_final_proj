@@ -4,11 +4,14 @@ here::i_am(
 
 library(webshot2)
 library(gt)
+library(dplyr)
+
 
 data_clean <- read.csv(
   file = here::here("Derived_data/cleaned_data.csv")
 )
 
+names(data_clean)
 total_death_data <- data_clean %>%
   filter(Place.of.Death == "Total - All Places of Death") #only show the total number of death
 
@@ -28,6 +31,8 @@ monthly_deaths_table <- monthly_deaths %>%
     COVID.19.Deaths = "COVID-19 Death Toll",
     Place.of.Death = "Place of Death"
   )
+
+write.csv(total_death_data, "Derived_data/total_death_data.csv", row.names = FALSE)
 
 gtsave(monthly_deaths_table, "Output/monthly_deaths_table.png")
 

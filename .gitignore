@@ -1,8 +1,4 @@
-# Ignore macOS system files
 .DS_Store
-
-# Ignore folders
 Output/
 Derived_data/
-
-README.html
+*.html
