@@ -14,7 +14,7 @@ The final project focuses on analyzing COVID-19 mortality data from the dataset 
 
 The repository is organized as follows:
 
--   **final_project_2.Rmd**: The main R Markdown file for the analysis.
+-   **report.Rmd**: The main R Markdown file for the analysis.
 -   **Makefile**: Automates the process of running the analysis and generating the output.
 -   **code/**: Contains any supporting R scripts or functions used in the analysis.
 -   **output/**: Stores the results and generated files from the analysis.
