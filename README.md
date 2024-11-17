@@ -28,3 +28,15 @@ The repository is organized as follows:
   - The code for creating the required figure is located in the **code/figure_code.R file**.
   - The figure is generated automatically when running the **Makefile** or **knitting final_project_2.Rmd**.
  
+## Generate Report
+
+ - Ensure all necessary R packages are installed.
+   - **dplyr**
+   - **lubridate**
+   - **webshot2**
+   - **gt**
+   - **ggplot2**
+   - **here**
+   - will update with **renv** later
+- Use the Makefile to execute the analysis and generate the report
+  - use **make** command
