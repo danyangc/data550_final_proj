@@ -16,8 +16,10 @@ The repository is organized as follows:
 
 -   **report.Rmd**: The main R Markdown file for the analysis.
 -   **Makefile**: Automates the process of running the analysis and generating the output.
--   **code/**: Contains any supporting R scripts or functions used in the analysis.
--   **output/**: Stores the results and generated files from the analysis.
+-   **Code/**: Contains any supporting R scripts or functions used in the analysis.
+-   **Data/**: Contains raw data.
+-   **Derived_data/**: Contains cleaned data for analysis.
+-   **Output/**: Stores the results and generated files from the analysis.
 
 ## Locating the Required Table and Figure Code
 
