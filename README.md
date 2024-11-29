@@ -2,13 +2,12 @@
 
 This repository contains the R Markdown analysis for my final project. It includes a `Makefile` to streamline running the analysis, and separate folders for code and outputs.
 
-## Description 
+## Description
 
 The final project focuses on analyzing COVID-19 mortality data from the dataset titled "Provisional COVID-19 Deaths by Place of Death and State". This dataset, sourced from official records, provides insights into COVID-19 deaths.
 
-- Analyze trends in COVID-19 mortality by state.
-- Visualize changes in death rates over time.
-
+-   Analyze trends in COVID-19 mortality by state.
+-   Visualize changes in death rates over time.
 
 ## Repository Structure
 
@@ -20,25 +19,30 @@ The repository is organized as follows:
 -   **Data/**: Contains raw data.
 -   **Derived_data/**: Contains cleaned data for analysis.
 -   **Output/**: Stores the results and generated files from the analysis.
+-   **renv/**: Locking package versions
 
 ## Locating the Required Table and Figure Code
 
-- Required Table:
-  - The code for creating the required table is located in the **code/table_code.R file**.
-  - The table is generated automatically when running the **Makefile** or **knitting final_project_2.Rmd**.
-- Required Figure:
-  - The code for creating the required figure is located in the **code/figure_code.R file**.
-  - The figure is generated automatically when running the **Makefile** or **knitting final_project_2.Rmd**.
- 
+-   Required Table:
+    -   The code for creating the required table is located in the **code/table_code.R file**.
+    -   The table is generated automatically when running the **Makefile** or **knitting final_project_2.Rmd**.
+-   Required Figure:
+    -   The code for creating the required figure is located in the **code/figure_code.R file**.
+    -   The figure is generated automatically when running the **Makefile** or **knitting final_project_2.Rmd**.
+
+## Synchronize Your Package Repository
+
+To ensure your R environment is consistent and all necessary packages are synchronized:
+
+1.  **Install the `renv` package**:
+
+    ``` r
+    install.packages("renv")
+    ```
+
+2.  Use **make install** command to synchronize package repository
+
 ## Generate Report
 
- - Ensure all necessary R packages are installed.
-   - **dplyr**
-   - **lubridate**
-   - **webshot2**
-   - **gt**
-   - **ggplot2**
-   - **here**
-   - will update with **renv** later
-- Use the Makefile to execute the analysis and generate the report
-  - use **make** command
+-   Use the Makefile to execute the analysis and generate the report
+    -   use **make** command
