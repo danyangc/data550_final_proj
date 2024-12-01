@@ -12,6 +12,7 @@ make_figure: clean_data make_table
 
 .PHONY: install
 install:
+	Rscript -e 'if (!("renv" %in% row.names(installed.packages()))) {install.packages("renv")}'
 	Rscript -e "renv::restore(prompt = FALSE)"
 
 .PHONY: clean
