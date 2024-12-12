@@ -26,6 +26,13 @@ final_project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
 	docker build -t final_project_image .
 	touch $@
 
+
 report/report.html:
+ifeq ($(OS),Windows_NT)
+	mkdir -p report
+	docker run -v "/$$(pwd | sed 's|/c|C:|')/report":/project/report danyangc/final_project_image
+else
+	mkdir -p report
 	docker run -v "$$(pwd)/report":/project/report danyangc/final_project_image
+endif
 
