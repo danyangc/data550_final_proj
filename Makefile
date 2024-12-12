@@ -27,14 +27,5 @@ final_project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
 	touch $@
 
 
-
-OS := $(shell uname -s)
-## Set volume mount path prefix based on OS
-ifeq ($(OS),Windows_NT)
-	VOLUME_PREFIX := "/"
-else
-	VOLUME_PREFIX := ""
-endif
-## Mount Rule
 report/report.html:
-	docker run -v $(OS_PATH_PREFIX)"$$(PWD)/report":/project/report danyangc/final_project_image
+	docker run -v /"$$(PWD)/report":/project/report danyangc/final_project_image
