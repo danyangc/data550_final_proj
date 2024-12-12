@@ -27,6 +27,20 @@ final_project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
 	touch $@
 
 
+# Detect OS
+OS := $(shell uname -s)
+
+# Set volume mount path prefix based on OS
+ifeq ($(OS),Windows_NT)
+	VOLUME_PREFIX := /
+else
+	VOLUME_PREFIX := 
+endif
+
+# Rule to mount the report directory and run the container
 report/report.html:
-	docker run -v "$$(PWD)/report":/project/report danyangc/final_project_image
+	docker run -v "$(VOLUME_PREFIX)$(PWD)/report:/home/rstudio/final_project/report" danyangc/final_report_image
+
+
+
 

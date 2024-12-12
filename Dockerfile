@@ -34,6 +34,7 @@ COPY Data Data
 COPY Makefile .
 COPY report.Rmd .
 
-RUN mkdir report
+RUN mkdir -p /home/rstudio/final_project/report
 
-CMD make && mv report.html /project/report
+CMD make && mv report.html /home/rstudio/final_project/report/
+
