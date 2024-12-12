@@ -33,7 +33,7 @@ report/report.html:
 ifeq ($(OS),Windows_NT)
 	# For Windows: Convert the path for Docker compatibility
 	mkdir -p report
-	docker run -v "$(shell echo $(CURDIR) | sed 's|C:|/c|' | tr '\\' '/')/report:/project/report" danyangc/final_project_image
+	docker run -v 	\"$(shell pwd)/report:/project/report" danyangc/final_project_image
 else
 	# For Linux/Mac: Use standard volume mount syntax
 	mkdir -p report
