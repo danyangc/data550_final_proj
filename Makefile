@@ -37,4 +37,4 @@ else
 endif
 ## Mount Rule
 report/report.html:
-	docker run -v "$(OS_PATH_PREFIX)$(PWD)/report":/project/report danyangc/final_project_image
+	docker run -v $(OS_PATH_PREFIX)"$$(PWD)/report":/project/report danyangc/final_project_image
