@@ -6,13 +6,14 @@ output: html_document
 
 ```{r, here-i-am, include = FALSE}
 here::i_am(
-  "report.rmd"
+  "report.Rmd"
 )
 ```
 
 # Top 5 states with highest monthly COVID-19 death tolls
 ```{r, echo=FALSE, fig.cap="Monthly COVID-19 Death Toll Table"}
-knitr::include_graphics("Output/monthly_deaths_table.png")
+#knitr::include_graphics("Output/monthly_deaths_table.html")
+htmltools::includeHTML("Output/monthly_deaths_table.html")
 ```
 This table shows the top 5 states with highest monthly COVID-19 death tolls.
 

@@ -1,4 +1,4 @@
-report.html: report.rmd Code/03_render_report.R clean_data make_figure make_table
+report.html: report.Rmd Code/03_render_report.R clean_data make_figure make_table
 	Rscript Code/03_render_report.R
 
 clean_data: 
@@ -17,4 +17,15 @@ install:
 
 .PHONY: clean
 clean:
-	rm -f Output/*.png && rm -f report.html && rm -f Derived_data/*
+	rm -f Output/*.html && rm -f report.html && rm -f Derived_data/*
+	
+PROJECTFILES = report.Rmd Code/03_render_report.R Code/00_clean_data.R Code/01_make_table.R Code/02_make_figure.R
+RENVFILES = renv.lock renv/activate.R renv/settings.json
+
+final_project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
+	docker build -t final_project_image .
+	touch $@
+
+report/report.html:
+	docker run -v "$$(pwd)/report":/project/report danyangc/final_project_image
+
