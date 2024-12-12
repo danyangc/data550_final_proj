@@ -27,5 +27,13 @@ final_project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
 	touch $@
 
 
+# Determine the current working directory differently based on OS
+ifeq ($(OS),Windows_NT)
+  PWD := $(shell pwd -W)
+else
+  PWD := $(shell pwd)
+endif
+
+# Run the Docker container
 report/report.html:
-	docker run -v "$$(PWD)/report":/project/report danyangc/final_project_image
+	docker run --rm -v $(PWD)/report:/app/report danyangc/final_project_image
