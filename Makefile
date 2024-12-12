@@ -28,4 +28,4 @@ final_project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
 
 
 report/report.html:
-	docker run -v /"$$(PWD)/report":/project/report danyangc/final_project_image
+	docker run -v "$$(PWD)/report":/project/report danyangc/final_project_image
