@@ -9,6 +9,22 @@ The final project focuses on analyzing COVID-19 mortality data from the dataset 
 -   Analyze trends in COVID-19 mortality by state.
 -   Visualize changes in death rates over time.
 
+## Automated report generation using Docker
+
+Navigate to the this project directory using `cd /.../this folder` command in the Terminal.
+
+The docker image for this project is located at <https://hub.docker.com/repository/docker/danyangc/final_report_image/general>.
+
+But you do not need pull this image manually
+
+Use `make report/report.html` command in Terminal and the report will be build automatically.
+
+## Automated report generation using Docker
+
+Use `make final_report_image` command in Terminal to build the image locally.
+
+Then run `docker run -v "$(pwd)/report":/home/rstudio/final_project/report final_report_image` in the terminal to generate the report
+
 ## Repository Structure
 
 The repository is organized as follows:
