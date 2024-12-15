@@ -19,7 +19,7 @@ But you do not need pull this image manually
 
 Use `make report/report.html` command in Terminal and the report will be build automatically.
 
-## Automated report generation using Docker
+## Build image locally
 
 Use `make final_report_image` command in Terminal to build the image locally.
 
