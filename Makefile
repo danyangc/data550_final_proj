@@ -22,8 +22,8 @@ clean:
 PROJECTFILES = report.Rmd Code/03_render_report.R Code/00_clean_data.R Code/01_make_table.R Code/02_make_figure.R
 RENVFILES = renv.lock renv/activate.R renv/settings.json
 
-final_project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
-	docker build -t final_project_image .
+final_report_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
+	docker build -t final_report_image .
 	touch $@
 
 
