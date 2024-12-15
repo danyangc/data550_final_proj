@@ -32,15 +32,15 @@ OS := $(shell uname -s)
 
 # Set volume mount path prefix based on OS
 ifeq ($(OS),Windows_NT)
-	VOLUME_PREFIX := /
+	dynamic_path := "/$$(PWD)/report":/home/rstudio/final_project/report
+else ifeq($(OS), MINGW64_NT)
+	dynamic_path := "/$$(PWD)/report":/home/rstudio/final_project/report
 else
-	VOLUME_PREFIX := 
+	dynamic_path :="$$(PWD)/report":/home/rstudio/final_project/report
 endif
 
 # Rule to mount the report directory and run the container
 report/report.html:
-	docker run -v "$(VOLUME_PREFIX)$(PWD)/report:/home/rstudio/final_project/report" danyangc/final_report_image
-
-
+	docker run -v $(dynamic_path) danyangc/final_report_image
 
 

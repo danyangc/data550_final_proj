@@ -1,4 +1,4 @@
-FROM rocker/rstudio as base
+FROM rocker/rstudio:4.4.1
 
 
 RUN mkdir /home/rstudio/final_project
@@ -14,12 +14,6 @@ RUN mkdir renv/.cache
 ENV RENV_PATHS_CACHE renv/.cache
 
 RUN R -e "renv::restore()"
-
-
-FROM rocker/rstudio
-WORKDIR /home/rstudio/final_project
-COPY --from=base /home/rstudio/final_project . 
-
 
 COPY Makefile . 
 COPY report.Rmd .
